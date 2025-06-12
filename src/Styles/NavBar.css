@@ -1,0 +1,23 @@
+.NavBar {
+  background-color: #8fc0e0;         
+  padding: 0.5rem 2rem;               
+  display: flex;
+  justify-content: end;           
+  align-items: center;
+}
+.Botones {
+  display: flex;
+  gap: 1rem;                      
+}
+.Botones a {
+  color: #050505;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.2rem;
+  border-radius: 6px;
+}
+.Botones a:hover {
+  background-color: #2e83bb;         
+  color: #141414;
+}
