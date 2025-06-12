@@ -1,8 +1,10 @@
-import React from 'react'
+import ProductoCard from './ProductoCard';
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <ProductoCard />
+    </>
   )
 }
 
