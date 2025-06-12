@@ -1,15 +1,15 @@
-import React from 'react'
-import  '../Styles/Header.css'
-
+import React from 'react';
+import '../Styles/Header.css'; 
 function Header() {
   return (
-    <div className='Encabezado'>
-      <div className='abreviatura'> FIPA </div>
-      <div className='linea-vertical'></div>
-      <div className='Nombre_app'> Formulario de Infoformacion Personal de Alumnos.</div>
+    <div className="container-fluid custom-bg py-3 px-4 d-flex align-items-center">
+      <div className="fw-bold fs-1 me-4 ">LIVETECH</div>
+      <div className="separator"></div>
+      <div className="fw-bold fs-5 ms-4 text-uppercase" >
+        Tecnología, estilo y elegancia para vos
+      </div>
     </div>
-    
-  )
+  );
 }
 
-export default Header
+export default Header;
