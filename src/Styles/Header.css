@@ -1,23 +1,13 @@
-.Encabezado{
-    display: flex;
-    align-items: center;
-    height: 70px;
-    background-color: #d6ccc2;
-    padding: 25px;
+.custom-bg {
+  background-color: #6dafdb; /* azul eléctrico suave o el color que prefieras */
 }
-.linea-vertical{
-    width: 2px;
-    height: 70%;
-    background-color: #000;
-    margin: 0 1rem
+
+
+.separator {
+  width: 2px;
+  height: 70%;
+  background-color: #000;
 }
-.abreviatura{
-    font-weight: bold;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 40px;
-}
-.Nombre_app{
-     font-weight: bold;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
+
+
+
