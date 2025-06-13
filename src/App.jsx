@@ -7,7 +7,7 @@ import ProductoDetalle from './Components/ProductoDetalle';
 import Favoritos from './Components/Favoritos';
 import ProductoForm from './Components/ProductoForm';
 import Acerca from './Components/Acerca';
-
+import ProductoList from './Components/ProductoList';
 function App() {
   return (
     <div className="App">
@@ -21,6 +21,7 @@ function App() {
         <Route path="/CrearProducto" element={<ProductoForm />} />
         <Route path="/EditarProducto/:id" element={<ProductoForm edit />} />
         <Route path="/Acerca" element={<Acerca />} />
+        <Route path="/Productos" element={<ProductoList />} />
       </Routes>
     </div>
   );
