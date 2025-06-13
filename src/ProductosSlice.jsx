@@ -15,9 +15,19 @@ const ProductosSlice = createSlice({
     favoritos: [],
   },
   reducers: {
-    add(state, action) {
-      state.entities.push(action.payload);
+
+      add(state, action) {
+      const nuevoProducto = { ...action.payload, id: Date.now() };
+      state.entities.push(nuevoProducto);
     },
+
+     edit(state, action) {
+      const index = state.entities.findIndex(p => p.id === action.payload.id);
+      if (index !== -1) {
+        state.entities[index] = action.payload;
+      }
+    },
+
     toggleFavorito(state, action) {
       const id = action.payload;
       if (state.favoritos.includes(id)) {
@@ -34,6 +44,6 @@ const ProductosSlice = createSlice({
   },
 });
 
-export const { add, toggleFavorito } = ProductosSlice.actions;
+export const { add, edit, toggleFavorito } = ProductosSlice.actions;
 export default ProductosSlice.reducer;
 
