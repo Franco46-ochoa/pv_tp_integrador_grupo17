@@ -69,22 +69,26 @@ export default function ProductoForm({ edit: isEdit }) {
 
     try {
       new URL(formData.image);
+      if (!formData.image.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
+        alert('La URL debe apuntar a una imagen (.jpg, .png, etc).');
+        return;
+      }
     } catch {
       alert('La URL de imagen no es válida.');
       return;
     }
 
-    // Enviar
     if (isEdit) {
       dispatch(edit({ ...formData, id: parseInt(id) }));
       alert('Producto editado exitosamente');
     } else {
-      const nuevoId = Math.floor(Math.random() * 10000) + 100;
+      const ultimoId = productos.length ? Math.max(...productos.map(p => p.id)) : 100;
+      const nuevoId = ultimoId + 1;
       dispatch(add({ ...formData, id: nuevoId }));
       alert('Producto creado exitosamente');
     }
 
-    navigate('/');
+    navigate('/Home');
   };
 
   return (
@@ -152,5 +156,3 @@ export default function ProductoForm({ edit: isEdit }) {
     </div>
   );
 }
-
-

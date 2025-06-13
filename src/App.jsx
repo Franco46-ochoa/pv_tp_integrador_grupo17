@@ -2,7 +2,11 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import NavBar from './Components/NavBar';
+import Home from './Components/Home';
+import ProductoDetalle from './Components/ProductoDetalle';
+import Favoritos from './Components/Favoritos';
 import ProductoForm from './Components/ProductoForm';
+import Acerca from './Components/Acerca';
 
 function App() {
   return (
@@ -10,12 +14,16 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
+        <Route index element={<Home />} />
+        <Route path="/Home" element={<Home/>} />
+        <Route path="/Producto/:id" element={<ProductoDetalle/>}/>
+        <Route path="/Favoritos" element={<Favoritos/>}/>
         <Route path="/CrearProducto" element={<ProductoForm />} />
         <Route path="/EditarProducto/:id" element={<ProductoForm edit />} />
+        <Route path="/Acerca" element={<Acerca />} />
       </Routes>
     </div>
   );
 }
 
 export default App;
-
