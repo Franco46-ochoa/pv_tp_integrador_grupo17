@@ -14,6 +14,7 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
+        <Route index element={<Home />} />
         <Route path="/Home" element={<Home/>} />
         <Route path="/Producto/:id" element={<ProductoDetalle/>}/>
         <Route path="/Favoritos" element={<Favoritos/>}/>
@@ -26,4 +27,3 @@ function App() {
 }
 
 export default App;
-
