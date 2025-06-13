@@ -1,43 +1,53 @@
-import { useParams, Link } from 'react-router-dom'; 
-import { useSelector } from 'react-redux'; 
+import { useParams, Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import '../Styles/DetalleProducto.css'; 
 
 function ProductoDetalle() {
-  const { id } = useParams(); 
-  const productos = useSelector(state => state.productos.entities); 
+  const { id } = useParams();
+  const productos = useSelector(state => state.productos.entities);
 
-  // buscar producto por ID (convertido a número)
   const producto = productos.find(p => p.id === parseInt(id));
 
-  // mostrar mensaje si no se encuentra
   if (!producto) {
     return (
-      <div className="container mt-4">
+      <div className="container mt-4 mensaje-producto-no-encontrado"> 
         <h2>Producto no encontrado</h2>
-        <Link to="/Home" className="btn btn-secondary mt-3">Volver a Home</Link> {/* ✅ AGREGADO */}
+        <Link to="/Home" className="btn btn-secondary mt-3">Volver a Home</Link>
       </div>
     );
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 contenedor-detalle-producto"> 
       <h2>Detalle del Producto</h2>
-      <div className="card">
-        <img src={producto.image} className="card-img-top" alt={producto.title} />
-        <div className="card-body">
-          <h5 className="card-title">{producto.title}</h5>
-          <p className="card-text"><strong>Precio:</strong> ${producto.price}</p>
-          <p className="card-text"><strong>Categoría:</strong> {producto.category}</p>
-          <p className="card-text"><strong>Descripción:</strong> {producto.description}</p>
+      <div className="card mb-3 tarjeta-detalle-producto"> 
+        <div className="row g-0">
+          <div className="col-md-4 d-flex align-items-center justify-content-center">
+            <img
+              src={producto.image}
+              className="img-fluid rounded-start"
+              alt={producto.title}
+              style={{ maxHeight: '200px', objectFit: 'contain', width: 'auto' }}
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body">
+              <h5 className="card-title">{producto.title}</h5>
+              <p className="card-text precio"><strong>Precio:</strong> ${producto.price}</p> {/* Clase actualizada */}
+              <p className="card-text categoria"><strong>Categoría:</strong> {producto.category}</p> {/* Clase actualizada */}
+              <p className="card-text descripcion"><strong>Descripción:</strong> {producto.description}</p> {/* Clase actualizada */}
 
-       
-          <Link to={`/EditarProducto/${producto.id}`} className="btn btn-warning me-2">
-            Editar Producto
-          </Link>
+              <div className="d-flex justify-content-start mt-3">
+                <Link to={`/EditarProducto/${producto.id}`} className="btn btn-warning me-2">
+                  Editar Producto
+                </Link>
 
-    
-          <Link to="/Home" className="btn btn-secondary">
-            Volver
-          </Link>
+                <Link to="/Home" className="btn btn-secondary">
+                  Volver
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -45,4 +55,3 @@ function ProductoDetalle() {
 }
 
 export default ProductoDetalle;
-                                    
