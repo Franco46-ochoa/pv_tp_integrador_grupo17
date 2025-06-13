@@ -1,0 +1,42 @@
+/* Cards.css */
+
+body {
+  background-color: #f4f8fb; /* Color de fondo general */
+}
+
+.card {
+  background-color: #b0c8e6; /* Fondo de cada tarjeta */
+  transition: transform 0.2s ease-in-out;
+  border: 2px solid #dce3ea;
+}
+
+.card:hover {
+  transform: scale(1.03); /* Animación al pasar el mouse */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-color: #007bff;
+}
+
+.card-footer {
+  background-color: #acc1f0 !important; /* Color del footer */
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #222 !important;
+  min-height: 3rem; /* Mantener altura para alineación visual */
+}
+
+.card-text {
+  color: #009688 !important;
+}
+
+.card-footer i {
+  transition: transform 0.2s ease;
+  color: #6c757d; /* Gris inicial */
+}
+
+.card-footer i:hover {
+  transform: scale(1.2);
+  color: #ffcc00 !important; /* Amarillo al pasar el mouse */
+}
