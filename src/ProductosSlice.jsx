@@ -35,6 +35,11 @@ const ProductosSlice = createSlice({
       } else {
         state.favoritos.push(id);
       }
+    },
+    remove(state, action) {
+      const id = action.payload;
+      state.entities = state.entities.filter(p => p.id !== id);
+      state.favoritos = state.favoritos.filter(fid => fid !== id);
     }
   },
   extraReducers: (builder) => {
@@ -44,6 +49,6 @@ const ProductosSlice = createSlice({
   },
 });
 
-export const { add, edit, toggleFavorito } = ProductosSlice.actions;
+export const { add, edit, toggleFavorito,remove } = ProductosSlice.actions;
 export default ProductosSlice.reducer;
 

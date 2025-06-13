@@ -9,6 +9,7 @@ const NavBar = () => {
         <div className='Botones'>
             <Link to="/Home">Home</Link>
             <Link to="/Favoritos">Favoritos</Link>
+            <Link to="/Productos">Productos</Link>
             <Link to="/CrearProducto">Crear Producto</Link>
             <Link to="/Acerca">Acerca</Link>
 
