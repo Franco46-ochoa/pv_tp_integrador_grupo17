@@ -7,9 +7,8 @@ const NavBar = () => {
   return (
     <nav className='NavBar'>       
         <div className='Botones'>
-            <Link to="/">Inicio</Link>
             <Link to="/Home">Home</Link>
-            <Link to="/Favoritoss">Favoritos</Link>
+            <Link to="/Favoritos">Favoritos</Link>
             <Link to="/CrearProducto">Crear Producto</Link>
             <Link to="/Acerca">Acerca</Link>
 
