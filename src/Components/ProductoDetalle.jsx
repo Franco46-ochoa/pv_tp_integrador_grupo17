@@ -1,16 +1,23 @@
 import { useParams, Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import '../Styles/DetalleProducto.css'; 
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleFavorito } from '../ProductosSlice';
+import '../Styles/DetalleProducto.css';
 
 function ProductoDetalle() {
   const { id } = useParams();
-  const productos = useSelector(state => state.productos.entities);
+  const dispatch = useDispatch();
+  const producto = useSelector(state =>
+    state.productos.entities.find(p => p.id === parseInt(id))
+  );
+  const favoritos = useSelector(state => state.productos.favoritos);
+  const esFavorito = producto ? favoritos.includes(producto.id) : false;
 
-  const producto = productos.find(p => p.id === parseInt(id));
-
+  const handleToggleFavorito = () => {
+    dispatch(toggleFavorito(producto.id));
+  };
   if (!producto) {
     return (
-      <div className="container mt-4 mensaje-producto-no-encontrado"> 
+      <div className="container mt-4 mensaje-producto-no-encontrado">
         <h2>Producto no encontrado</h2>
         <Link to="/Home" className="btn btn-secondary mt-3">Volver a Home</Link>
       </div>
@@ -18,9 +25,9 @@ function ProductoDetalle() {
   }
 
   return (
-    <div className="container mt-4 contenedor-detalle-producto"> 
+    <div className="container mt-4 contenedor-detalle-producto">
       <h2>Detalle del Producto</h2>
-      <div className="card mb-3 tarjeta-detalle-producto"> 
+      <div className="card mb-3 tarjeta-detalle-producto">
         <div className="row g-0">
           <div className="col-md-4 d-flex align-items-center justify-content-center">
             <img
@@ -45,6 +52,14 @@ function ProductoDetalle() {
                 <Link to="/Home" className="btn btn-secondary">
                   Volver
                 </Link>
+                <div className="d-flex justify-content-start mx-3">
+                  <i
+                    className={`bi ${esFavorito ? 'bi-star-fill text-warning' : 'bi-star'} fs-3`}
+                    role="button"
+                    onClick={handleToggleFavorito}
+                    title="Marcar como favorito"
+                  ></i>
+                </div>
               </div>
             </div>
           </div>
