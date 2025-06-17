@@ -1,23 +1,45 @@
+/* Barra de navegación */
 .NavBar {
-  background-color: #8fc0e0;         
-  padding: 0.5rem 2rem;               
+  background-color: #172d43; /* Igual o similar al header */
   display: flex;
-  justify-content: end;           
+  justify-content: flex-end;
   align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
+/* Contenedor de botones */
 .Botones {
   display: flex;
-  gap: 1rem;                      
+  gap: 1.5rem;
 }
+
+/* Estilo de los links */
 .Botones a {
-  color: #050505;
+  color: #f0f0f0;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.2rem;
+  padding: 6px 12px;
   border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Hover de los links */
 .Botones a:hover {
-  background-color: #2e83bb;         
+  background-color: #f39c12;
   color: #141414;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .NavBar {
+    justify-content: center;
+  }
+
+  .Botones {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
 }
