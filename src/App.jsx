@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+
 import { Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import NavBar from './Components/NavBar';
@@ -11,7 +11,7 @@ import Acerca from './Components/Acerca';
 import ProductoList from './Components/ProductoList';
 function App() {
   return (
-    <div className="App">
+    <div className="page-background">
       <Header />
       <NavBar />
       <Routes>
