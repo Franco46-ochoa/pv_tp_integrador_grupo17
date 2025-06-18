@@ -5,9 +5,9 @@ body {
 }
 
 .card {
-  background-color: #b0c8e6; /* Fondo de cada tarjeta */
+  background-color: #ffffff; /* Fondo de cada tarjeta */
   transition: transform 0.2s ease-in-out;
-  border: 2px solid #dce3ea;
+  border: 2px solid #ffffff;
 }
 
 .card:hover {

@@ -1,18 +1,17 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleFavorito } from '../ProductosSlice';
 import '../Styles/Cards.css';
 
 function ProductoCard() {
-  const { entities } = useSelector((state) => state.productos);
-  const [favoritos, setFavoritos] = useState({});
+  const { entities, favoritos } = useSelector((state) => state.productos);
+  const dispatch = useDispatch();
 
-  const toggleFavorito = (id) => {
-    setFavoritos((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
+  const handleToggleFavorito = (id) => {
+    dispatch(toggleFavorito(id));
+  }
+
+
 
   return (
     <>
@@ -30,23 +29,26 @@ function ProductoCard() {
               alt={producto.title}
               style={{ height: '160px', objectFit: 'contain', padding: '10px' }}
             />
-            <div className="card-body">
+            <div className="card-body"> {/* The gradient will be applied here */}
               <h6 className="card-title">{producto.title}</h6>
               <p className="card-text text-muted small">${producto.price}</p>
             </div>
-            <div className="card-footer  border-0 d-flex justify-content-between align-items-center">
+            <div className="card-footer border-0 d-flex justify-content-between align-items-center">
               <Link
-                className="btn btn-sm btn-light rounded-pill px-3" to={`/producto/${producto.id}`}>
+                className="btn btn-sm btn-primary rounded-pill px-3"
+                to={`/producto/${producto.id}`}
+              >
                 Ver producto
               </Link>
 
               <i
-                className={`bi ${favoritos[producto.id] ? 'bi-star-fill text-warning' : 'bi-star'} fs-5`}
+                className={`bi ${favoritos.includes(producto.id) ? 'bi-star-fill text-warning' : 'bi-star'} fs-5`}
                 role="button"
-                onClick={() => toggleFavorito(producto.id)}
+                onClick={() => handleToggleFavorito(producto.id)}
                 title="Marcar como favorito"
               ></i>
             </div>
+
           </div>
         ))}
       </div>
