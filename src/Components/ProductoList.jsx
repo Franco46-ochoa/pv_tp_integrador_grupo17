@@ -14,7 +14,7 @@ function ProductoList() {
     }
     return (
         <>
-            <div className="container my-5">
+            <div className="container mt-5 mb-0">
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped table-hover my-3 custom-table"> 
                         <thead>

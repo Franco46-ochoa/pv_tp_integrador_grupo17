@@ -8,11 +8,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import '../Styles/Footer.css'; 
+import '../Styles/Footer.css'; // Importa el CSS específico para el footer
 
+// Footer diseñado con bootstrap
 function Footer() {
   return (
-    <footer className="footer-custom py-4 mt-5">
+    <footer className="footer-custom pt-4 pb-4 mt-0">
       <div className="container">
         <div className="row align-items-center">
 
@@ -25,10 +26,11 @@ function Footer() {
           <div className="col-md-4 mb-3 mb-md-0 text-center">
             <a href="#top" className="text-decoration-none footer-up-button">
               <FontAwesomeIcon icon={faArrowUp} size="2x" />
-              <div style={{ fontSize: '0.8rem' }}>Arriba!</div> 
+              <div style={{ fontSize: '0.8rem' }}>Arriba!</div>
             </a>
           </div>
 
+          {/* Redes sociales y Copyright */}
           <div className="col-md-4 text-center text-md-end footer-social-section">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon mx-2">
               <FontAwesomeIcon icon={faFacebook} size="lg" />
