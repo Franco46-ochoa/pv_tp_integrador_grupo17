@@ -34,13 +34,9 @@ function ProductoCard() {
               <p className="card-text text-muted small">${producto.price}</p>
             </div>
             <div className="card-footer border-0 d-flex justify-content-between align-items-center">
-              <Link
-                className="btn btn-sm btn-primary rounded-pill px-3"
-                to={`/producto/${producto.id}`}
-              >
-                Ver producto
+              <Link className="btn btn-sm btn-custom-eye rounded-pill px-3" to={`/producto/${producto.id}`}>
+                <i className="bi bi-eye-fill fs-4"></i>
               </Link>
-
               <i
                 className={`bi ${favoritos.includes(producto.id) ? 'bi-star-fill text-warning' : 'bi-star'} fs-5`}
                 role="button"

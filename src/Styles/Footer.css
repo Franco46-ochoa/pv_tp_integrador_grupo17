@@ -1,0 +1,75 @@
+/* Edita los estilos generales del footer */
+.footer-custom {
+  background-color: #07111D;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Edita para corregir el cuadro blanco y heredar color en las columnas del footer */
+.footer-custom .container .row > div {
+  background-color: transparent !important;
+  color: inherit;
+}
+
+/* Edita los estilos del logo en el footer */
+.footer-logo {
+  max-height: 50px;
+  width: auto;
+  filter: brightness(1.2);
+}
+
+/* Edita los estilos del botón "Arriba!" */
+.footer-up-button {
+  color: #2ECC71 !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Edita el efecto hover del botón "Arriba!" */
+.footer-up-button:hover {
+  color: #27AE60 !important;
+  transform: translateY(-3px);
+}
+
+/* Edita los estilos de la sección de iconos sociales */
+.footer-social-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Edita los estilos de los iconos individuales de redes sociales */
+.footer-social-icon {
+  color: #f0f0f0 !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+  margin: 0 8px;
+}
+
+/* Edita el efecto hover de los iconos sociales */
+.footer-social-icon:hover {
+  color: #2ECC71 !important;
+  transform: scale(1.1);
+}
+
+/* Edita los estilos del texto de copyright */
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 5px;
+  width: 100%;
+  text-align: inherit;
+}
+
+/* Edita la responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .footer-social-section {
+    justify-content: center;
+  }
+  .footer-copyright {
+    text-align: center;
+  }
+  .footer-custom .container .row .col-md-4 {
+    text-align: center !important;
+  }
+}

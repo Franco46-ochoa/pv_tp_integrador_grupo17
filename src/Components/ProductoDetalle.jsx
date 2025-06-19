@@ -1,20 +1,28 @@
 import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFavorito } from '../ProductosSlice';
+import { useState } from 'react';
 import '../Styles/DetalleProducto.css';
 
 function ProductoDetalle() {
   const { id } = useParams();
   const dispatch = useDispatch();
+
   const producto = useSelector(state =>
     state.productos.entities.find(p => p.id === parseInt(id))
   );
+
   const favoritos = useSelector(state => state.productos.favoritos);
   const esFavorito = producto ? favoritos.includes(producto.id) : false;
 
+  const [pop, setPop] = useState(false);
+
   const handleToggleFavorito = () => {
+    setPop(true);
     dispatch(toggleFavorito(producto.id));
+    setTimeout(() => setPop(false), 300);
   };
+
   if (!producto) {
     return (
       <div className="container mt-4 mensaje-producto-no-encontrado">
@@ -40,27 +48,35 @@ function ProductoDetalle() {
           <div className="col-md-8">
             <div className="card-body">
               <h5 className="card-title">{producto.title}</h5>
-              <p className="card-text precio"><strong>Precio:</strong> ${producto.price}</p> {/* Clase actualizada */}
-              <p className="card-text categoria"><strong>Categoría:</strong> {producto.category}</p> {/* Clase actualizada */}
-              <p className="card-text descripcion"><strong>Descripción:</strong> {producto.description}</p> {/* Clase actualizada */}
+              <p className="card-text precio">
+                <strong>Precio:</strong> ${producto.price}
+              </p>
+              <p className="card-text categoria">
+                <strong>Categoría:</strong> {producto.category}
+              </p>
+              <p className="card-text descripcion">
+                <strong>Descripción:</strong> {producto.description}
+              </p>
 
-              <div className="d-flex justify-content-start mt-3">
+              <div className="d-flex justify-content-start mt-3 align-items-center">
                 <Link to={`/EditarProducto/${producto.id}`} className="btn btn-warning me-2">
-                  Editar Producto
+                  <i className="bi bi-pencil-fill"></i>
                 </Link>
 
                 <Link to="/Home" className="btn btn-secondary">
-                  Volver
+                  <i className="bi bi-arrow-left"></i>
                 </Link>
-                <div className="d-flex justify-content-start mx-3">
+
+                <div className="ms-3">
                   <i
-                    className={`bi ${esFavorito ? 'bi-star-fill text-warning' : 'bi-star'} fs-3`}
-                    role="button"
+                    className={`bi ${esFavorito ? 'bi-star-fill estrella-activa' : 'bi-star'} estrella-favorito fs-3 ${pop ? 'estrella-pop' : ''}`}
                     onClick={handleToggleFavorito}
                     title="Marcar como favorito"
+                    role="button"
                   ></i>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
