@@ -92,3 +92,4 @@ La app estará disponible en http://localhost:5173 (o el puerto que indique Vite
 - Antivilo Aldo Dante - [GitHub](https://github.com/AldoDante)
 - Ochoa Franco - [GitHub](https://github.com/Franco46-ochoa)
 - Ortiz Marcelo Fernando - [GitHub](https://github.com/marceortiz)
+- Heredia Julio Nahuel - [GitHub](https://github.com/Jnh1212)
