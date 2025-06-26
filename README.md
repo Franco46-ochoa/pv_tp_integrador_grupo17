@@ -1,12 +1,93 @@
-# React + Vite
+# Trabajo Integrador Grupo 17 Programación Visual 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Esta es una aplicación de una sola página (SPA) desarrollada en React utilizando Vite. Permite gestionar productos mediante funcionalidades como crear, editar, eliminar y visualizar información detallada.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## Expanding the ESLint configuration
+- **Página de Inicio**
+   - Muestra un listado de productos en formato de tarjetas, incluyendo:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Funcionalidad de Favoritos**
+   - Los productos pueden ser marcados o desmarcados como favoritos.
+   - El estado de los productos favoritos se almacena en un estado global.
+
+- **Página de Favoritos**
+    -Muestra solo los productos marcados como favoritos.
+
+- **Página de Detalle del Producto**: 
+   - Información ampliada del producto.
+   - Opción para desmarcar el producto como favorito.
+
+- **Formulario de Creación y Edición**: 
+   - Permite crear nuevos productos o editar productos existentes.
+
+## Tecnologías Utilizadas
+
+- React
+- Vite
+- React Router Dom
+- Redux
+- Axios (para el consumo de API)
+- CSS Framework Bootstrap
+
+## API Utilizada
+
+La aplicación consume productos desde la siguiente API REST externa:
+
+- [Fake Store API](https://fakestoreapi.com/products)
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd nombre-del-repositorio
+   ```bash
+2. Instala las dependencias:
+    ```bash
+    npm install
+    npm install redux react-redux axios
+    ```bash
+3. Ejecutar la aplicación
+    ```bash
+    npm run dev
+    ```bash
+La app estará disponible en http://localhost:5173 (o el puerto que indique Vite).
+
+## Estructura del proyecto
+    src/
+  ├─ assets/
+  │   ├─ react.svg
+  ├─ components/
+  │   ├─ Acerca.jsx
+  │   ├─ Favoritos.jsx
+  │   ├─ Footer.jsx
+  │   ├─ Header.jsx
+  │   └─ Home.jsx
+  │   └─ NavBar.jsx
+  │   └─ ProductoCard.jsx
+  │   └─ ProductoDetalle.jsx
+  │   └─ ProductoForm.jsx
+  │   └─ ProductoList.jsx
+  ├─ Styles/
+  │   ├─ Cards.css
+  │   ├─ DetalleProducto.css
+  │   └─ Header.css
+  │   └─ NavBar.css
+  │   └─ Styles.css
+  ├─ App.jsx
+  ├─ App.css
+  ├─ index.css
+  ├─ main.jsx
+  ├─ ProductosSlice.jsx
+  ├─ store.jsx
+
+
+## Integrantes del Grupo
+
+- ** Taritolay Gonzalo ** - [GitHub](https://github.com/GonzaTaritolay)
+- ** Antivilo Aldo Dante ** - [GitHub](https://github.com/AldoDante)
+- ** Ochoa Franco ** - [GitHub](https://github.com/Franco46-ochoa)
+- ** Ortiz Marcelo Fernando ** - [GitHub](https://github.com/marceortiz)
