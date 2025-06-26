@@ -42,8 +42,9 @@ La aplicación consume productos desde la siguiente API REST externa:
 
 1. Clona el repositorio:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd nombre-del-repositorio
+   git clone https://github.com/Franco46-ochoa/pv_tp_integrador_grupo17
+   cd pv_tp_integrador_grupo17
+
    
 2. Instala las dependencias:
     ```bash
