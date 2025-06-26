@@ -14,7 +14,7 @@ Esta es una aplicación de una sola página (SPA) desarrollada en React utilizan
    - El estado de los productos favoritos se almacena en un estado global.
 
 - **Página de Favoritos**
-    -Muestra solo los productos marcados como favoritos.
+   - Muestra solo los productos marcados como favoritos.
 
 - **Página de Detalle del Producto**: 
    - Información ampliada del producto.
@@ -29,7 +29,7 @@ Esta es una aplicación de una sola página (SPA) desarrollada en React utilizan
 - Vite
 - React Router Dom
 - Redux
-- Axios (para el consumo de API)
+- Axios
 - CSS Framework Bootstrap
 
 ## API Utilizada
@@ -44,50 +44,50 @@ La aplicación consume productos desde la siguiente API REST externa:
    ```bash
    git clone <URL_DEL_REPOSITORIO>
    cd nombre-del-repositorio
-   ```bash
+   
 2. Instala las dependencias:
     ```bash
     npm install
     npm install redux react-redux axios
-    ```bash
+    
 3. Ejecutar la aplicación
     ```bash
     npm run dev
-    ```bash
+    
 La app estará disponible en http://localhost:5173 (o el puerto que indique Vite).
 
 ## Estructura del proyecto
-    src/
-  ├─ assets/
-  │   ├─ react.svg
-  ├─ components/
-  │   ├─ Acerca.jsx
-  │   ├─ Favoritos.jsx
-  │   ├─ Footer.jsx
-  │   ├─ Header.jsx
-  │   └─ Home.jsx
-  │   └─ NavBar.jsx
-  │   └─ ProductoCard.jsx
-  │   └─ ProductoDetalle.jsx
-  │   └─ ProductoForm.jsx
-  │   └─ ProductoList.jsx
-  ├─ Styles/
-  │   ├─ Cards.css
-  │   ├─ DetalleProducto.css
-  │   └─ Header.css
-  │   └─ NavBar.css
-  │   └─ Styles.css
-  ├─ App.jsx
-  ├─ App.css
-  ├─ index.css
-  ├─ main.jsx
-  ├─ ProductosSlice.jsx
-  ├─ store.jsx
-
+  ```src/
+    ├─ assets/
+    │   ├─ react.svg
+    ├─ components/
+    │   ├─ Acerca.jsx
+    │   ├─ Favoritos.jsx
+    │   ├─ Footer.jsx
+    │   ├─ Header.jsx
+    │   └─ Home.jsx
+    │   └─ NavBar.jsx
+    │   └─ ProductoCard.jsx
+    │   └─ ProductoDetalle.jsx
+    │   └─ ProductoForm.jsx
+    │   └─ ProductoList.jsx
+    ├─ Styles/
+    │   ├─ Cards.css
+    │   ├─ DetalleProducto.css
+    │   └─ Header.css
+    │   └─ NavBar.css
+    │   └─ Styles.css
+    ├─ App.jsx
+    ├─ App.css
+    ├─ index.css
+    ├─ main.jsx
+    ├─ ProductosSlice.jsx
+    ├─ store.jsx
+```
 
 ## Integrantes del Grupo
 
-- ** Taritolay Gonzalo ** - [GitHub](https://github.com/GonzaTaritolay)
-- ** Antivilo Aldo Dante ** - [GitHub](https://github.com/AldoDante)
-- ** Ochoa Franco ** - [GitHub](https://github.com/Franco46-ochoa)
-- ** Ortiz Marcelo Fernando ** - [GitHub](https://github.com/marceortiz)
+- Taritolay Gonzalo - [GitHub](https://github.com/GonzaTaritolay)
+- Antivilo Aldo Dante - [GitHub](https://github.com/AldoDante)
+- Ochoa Franco - [GitHub](https://github.com/Franco46-ochoa)
+- Ortiz Marcelo Fernando - [GitHub](https://github.com/marceortiz)
