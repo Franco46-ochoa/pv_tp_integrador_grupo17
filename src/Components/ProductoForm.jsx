@@ -9,7 +9,9 @@ export default function ProductoForm({ edit: isEdit }) {
   const navigate = useNavigate();
   const productos = useSelector(state => state.productos.entities);
 
-  const productoExistente = isEdit ? productos.find(p => p.id === parseInt(id)) : null;
+  const productoExistente = isEdit
+    ? productos.find(p => p.id === parseInt(id))
+    : null;
 
   const [formData, setFormData] = useState({
     title: '',
@@ -92,67 +94,83 @@ export default function ProductoForm({ edit: isEdit }) {
   };
 
   return (
-    <div className="container mt-4">
-      <h2>{isEdit ? 'Editar Producto' : 'Crear Producto'}</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label>Título:</label>
-          <input
-            type="text"
-            name="title"
-            className="form-control"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label>Precio:</label>
-          <input
-            type="number"
-            name="price"
-            className="form-control"
-            value={formData.price}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label>Categoría:</label>
-          <input
-            type="text"
-            name="category"
-            className="form-control"
-            value={formData.category}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label>Imagen (URL):</label>
-          <input
-            type="text"
-            name="image"
-            className="form-control"
-            value={formData.image}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label>Descripción:</label>
-          <textarea
-            name="description"
-            className="form-control"
-            value={formData.description}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit" className="btn btn-success">
-          {isEdit ? 'Guardar Cambios' : 'Crear Producto'}
-        </button>
-      </form>
+    <div className="container my-5 d-flex justify-content-center">
+      <div className="card shadow p-4" style={{ maxWidth: '600px', width: '100%' }}>
+        <h3 className="text-center mb-4">
+          {isEdit ? 'Editar Producto' : 'Crear Producto'}
+        </h3>
+
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label className="form-label">Título</label>
+            <input
+              type="text"
+              name="title"
+              className="form-control"
+              value={formData.title}
+              onChange={handleChange}
+              placeholder="Ej. Mouse gamer RGB"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Precio</label>
+            <input
+              type="number"
+              name="price"
+              className="form-control"
+              value={formData.price}
+              onChange={handleChange}
+              placeholder="Ej. 4999.99"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Categoría</label>
+            <input
+              type="text"
+              name="category"
+              className="form-control"
+              value={formData.category}
+              onChange={handleChange}
+              placeholder="Ej. Electrónica"
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label className="form-label">Imagen (URL)</label>
+            <input
+              type="text"
+              name="image"
+              className="form-control"
+              value={formData.image}
+              onChange={handleChange}
+              placeholder="https://ejemplo.com/imagen.jpg"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="form-label">Descripción</label>
+            <textarea
+              name="description"
+              className="form-control"
+              rows="3"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Describe tu producto..."
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-success w-100">
+            {isEdit ? 'Guardar Cambios' : 'Crear Producto'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

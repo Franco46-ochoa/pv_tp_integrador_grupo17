@@ -5,7 +5,7 @@
   font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-top: 0; /* Elimina espacio blanco */
+  margin-top: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -28,19 +28,40 @@
   transform: translateY(-3px);
 }
 
-/* Sección de iconos sociales */
+/* Sección de redes + botón Acerca */
 .footer-social-section {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Botón Acerca */
+.footer-acerca-link {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #2ECC71;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.footer-acerca-link:hover {
+  background-color: #27AE60;
+  transform: scale(1.05);
 }
 
 /* Iconos sociales individuales */
 .footer-social-icon {
   color: #f0f0f0 !important;
   transition: color 0.3s ease, transform 0.2s ease;
-  margin: 0 8px;
+  margin: 4px 8px;
 }
 
 .footer-social-icon:hover {
@@ -48,7 +69,7 @@
   transform: scale(1.1);
 }
 
-/* Texto de copyright */
+/* Copyright */
 .footer-copyright {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.6);
@@ -60,7 +81,7 @@
 /* Responsividad */
 @media (max-width: 768px) {
   .footer-social-section {
-    justify-content: center;
+    align-items: center;
   }
 
   .footer-copyright {
@@ -71,8 +92,10 @@
     text-align: center !important;
   }
 }
+
+/* Asegura fondo transparente en todos los bloques */
 .footer-custom .container,
 .footer-custom .row,
 .footer-custom .col-md-4 {
-  background-color: inherit !important;
+  background-color: transparent !important;
 }
