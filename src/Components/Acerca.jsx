@@ -27,10 +27,10 @@ const creadores = [
     imagen: '/Fotos/compañero3.jpg',
   },
   {
-    nombre: 'Compañero 4',
+    nombre: 'Ortiz Marcelo Fernando',
     descripcion: 'Estudiante de la carrera Analista Programador Universitario.',
-    lu: 'APU004444',
-    imagen: '/Fotos/compañero4.jpg',
+    lu: 'APU004872',
+    imagen: '/Fotos/marcelo.png',
   },
 ];
 
