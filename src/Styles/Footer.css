@@ -1,0 +1,101 @@
+/* Estilos generales del footer */
+.footer-custom {
+  background-color: #07111D;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo */
+.footer-logo {
+  max-height: 70px;
+  width: auto;
+  filter: brightness(1.2);
+}
+
+/* Botón "Arriba!" */
+.footer-up-button {
+  color: #2ECC71 !important;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-up-button:hover {
+  color: #27AE60 !important;
+  transform: translateY(-3px);
+}
+
+/* Sección de redes + botón Acerca */
+.footer-social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Botón Acerca */
+.footer-acerca-link {
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #2ECC71;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.footer-acerca-link:hover {
+  background-color: #27AE60;
+  transform: scale(1.05);
+}
+
+/* Iconos sociales individuales */
+.footer-social-icon {
+  color: #f0f0f0 !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+  margin: 4px 8px;
+}
+
+.footer-social-icon:hover {
+  color: #2ECC71 !important;
+  transform: scale(1.1);
+}
+
+/* Copyright */
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 5px;
+  width: 100%;
+  text-align: inherit;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .footer-social-section {
+    align-items: center;
+  }
+
+  .footer-copyright {
+    text-align: center;
+  }
+
+  .footer-custom .container .row .col-md-4 {
+    text-align: center !important;
+  }
+}
+
+/* Asegura fondo transparente en todos los bloques */
+.footer-custom .container,
+.footer-custom .row,
+.footer-custom .col-md-4 {
+  background-color: transparent !important;
+}

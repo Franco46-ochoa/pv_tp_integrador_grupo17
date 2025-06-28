@@ -1,16 +1,17 @@
 import React from 'react';
-import '../Styles/Header.css'; 
+import '../Styles/Header.css';
 
 function Header() {
   return (
-    <div className="container-fluid custom-bg py-3 px-4 d-flex align-items-center">
-      <div className="fw-bold fs-1 me-4 ">LIVETECH</div>
-      <div className="separator"></div>
-      <div className="fw-bold fs-5 ms-4 text-uppercase" >
-        Tecnología, estilo y elegancia para vos
+    <div className="container-fluid header-container d-flex align-items-center justify-content-start px-4 py-3">
+      <img src="/Logo de LIVETECH.png" alt="Logo de LIVETECH" className="header-logo me-4" />
+      <div className="header-separator"></div>
+      <div className="header-text ms-4">
+        TECNOLOGÍA, ESTILO Y ELEGANCIA PARA VOS.
       </div>
     </div>
   );
 }
 
 export default Header;
+

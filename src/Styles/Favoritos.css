@@ -1,0 +1,16 @@
+.favorito-card {
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.favorito-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.favorito-img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}

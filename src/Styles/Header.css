@@ -1,13 +1,69 @@
-.custom-bg {
-  background-color: #6dafdb; /* azul eléctrico suave o el color que prefieras */
+/* Contenedor principal del encabezado */
+.header-container {
+  background-color: #07111D; /* Fondo oscuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+  color: #f0f0f0; /* Texto claro */
 }
 
+/* Logo */
+.header-logo {
+  max-width: 120px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
 
-.separator {
+.header-logo:hover {
+  transform: scale(1.05); /* Efecto hover */
+}
+
+/* Separador entre logo y texto */
+.header-separator {
   width: 2px;
-  height: 70%;
-  background-color: #000;
+  height: 60px;
+  background-color: #f39c12; /* Dorado/naranja */
+  border-radius: 1px;
 }
 
+/* Texto descriptivo */
+.header-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
 
+/* Responsividad */
+@media (max-width: 991.98px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
 
+  .header-logo {
+    max-width: 90px;
+    margin-bottom: 15px;
+  }
+
+  .header-separator {
+    display: none;
+  }
+
+  .header-text {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .header-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header-text {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
