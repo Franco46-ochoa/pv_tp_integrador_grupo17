@@ -1,8 +1,24 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0px;
+  padding: 0px;
   text-align: center;
+}
+
+
+body.claro {
+    background-color:beige;
+    color: black;
+
+}
+
+body.oscuro {
+    background-color:#888;
+    color: white;
+}
+
+.botonTema {
+  text-align: center;
+  
 }
 
 .logo {

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/Header.css';
+import CambiarTema from './CambiarTema';
 
 function Header() {
   return (
@@ -9,6 +10,7 @@ function Header() {
       <div className="header-text ms-4">
         TECNOLOGÍA, ESTILO Y ELEGANCIA PARA VOS.
       </div>
+      <CambiarTema />
     </div>
   );
 }
