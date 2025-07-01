@@ -1,6 +1,16 @@
 /* Barra de navegación */
-.NavBar {
-  background-color: #172d43; /* Igual o similar al header */
+/*Estilos tema oscuro*/
+.NavBar.oscuro {
+  background-color: #172d43; /* Fondo oscuro */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el tema claro */
+.NavBar.claro {
+  background-color: salmon; /* Fondo claro */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -15,7 +25,7 @@
 
 /* Estilo de los links */
 .Botones a {
-  color: #f0f0f0;
+  color: #f0f0f0; /* Texto por defecto */
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;

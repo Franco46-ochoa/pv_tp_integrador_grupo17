@@ -1,10 +1,18 @@
 /* Contenedor principal del encabezado */
-.header-container {
-  background-color: #07111D; /* Fondo oscuro */
+/*Tema oscuro*/
+.header-container.oscuro {
+  background-color:#07111D; /* Fondo oscuro */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
   color: #f0f0f0; /* Texto claro */
 }
 
+/*Tema claro*/
+
+.header-container.claro {
+  background-color:lightgreen; /* Fondo claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+  color: black; /* Texto oscuro */
+}
 /* Logo */
 .header-logo {
   max-width: 120px;

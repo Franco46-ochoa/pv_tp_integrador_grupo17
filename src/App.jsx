@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import NavBar from './Components/NavBar';
@@ -9,12 +9,23 @@ import ProductoForm from './Components/ProductoForm';
 import Acerca from './Components/Acerca';
 import ProductoList from './Components/ProductoList';
 import Footer from './Components/Footer';
+import './App.css';
 
-function App() {
+const App = () => {
+  const [tema, setTema] = useState('claro');
+
+  const cambiarTema = () => {
+    setTema(tema === 'claro' ? 'oscuro' : 'claro');
+  };
+
+  useEffect(() => {
+    document.body.className = tema; // Cambia la clase del body
+  }, [tema]);
+
   return (
     <div id="top" className="d-flex flex-column min-vh-100">
-      <Header />
-      <NavBar />
+      <Header tema={tema} cambiarTema={cambiarTema} />
+      <NavBar tema={tema} />
       <main className="flex-grow-1">
         <Routes>
           <Route index element={<Home />} />
@@ -27,9 +38,9 @@ function App() {
           <Route path="/Productos" element={<ProductoList />} />
         </Routes>
       </main>
-      <Footer />
+      <Footer  tema={tema} />
     </div>
   );
-}
+};
 
 export default App;

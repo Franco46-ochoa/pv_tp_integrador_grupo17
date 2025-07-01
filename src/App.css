@@ -4,22 +4,18 @@
   text-align: center;
 }
 
-
+/*Tema claro*/
 body.claro {
-    background-color:beige;
-    color: black;
-
+    background-color:lightgreen; /*Fondo claro*/
+    color: black; /* Texto oscuro*/
 }
 
+/*Tema oscuro*/
 body.oscuro {
-    background-color:#888;
-    color: white;
+    background-color: #07111D; /*Fondo oscuro*/
+    color: #f0f0f0; /* Texto claro*/
 }
 
-.botonTema {
-  text-align: center;
-  
-}
 
 .logo {
   height: 6em;
