@@ -1,4 +1,4 @@
-import ProductoCard from './ProductoCard';
+import ProductoCard from '../Components/ProductoCard';
 
 function Home() {
   return (

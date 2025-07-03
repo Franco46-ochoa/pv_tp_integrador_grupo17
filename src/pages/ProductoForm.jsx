@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import { add, edit } from '../ProductosSlice';
+import { add, edit } from '../store/ProductosSlice';
 
 export default function ProductoForm({ edit: isEdit }) {
   const { id } = useParams();

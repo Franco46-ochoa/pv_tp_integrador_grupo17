@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleFavorito } from '../ProductosSlice';
+import { toggleFavorito } from '../store/ProductosSlice';
 import '../Styles/Cards.css';
 
 function ProductoCard() {

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleFavorito } from '../ProductosSlice';
+import { toggleFavorito } from '../store/ProductosSlice';
 import { useState } from 'react';
 import '../Styles/DetalleProducto.css';
 
