@@ -4,26 +4,70 @@ import { useNavigate } from "react-router-dom";
 import { add } from "../store/UsersSlice";
 
 function FormLogin() {    
-    
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+   
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate();
+    const [confirmPassword, setConfirmPassword] = useState('');
+
+    
+    const [errors, setErrors] = useState({});
+
+    
     const lastId = useSelector((state) => state.users.entities.length);
+
+    
+    const validate = () => {
+        const newErrors = {};
+
+        
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            newErrors.email = "El correo no es válido.";
+        }
+
+        
+        if (password.length < 8) {
+            newErrors.password = "La contraseña debe tener al menos 8 caracteres.";
+        }
+
+        
+        if (password !== confirmPassword) {
+            newErrors.confirmPassword = "Las contraseñas no coinciden.";
+        }
+
+        
+        setErrors(newErrors);
+
+        
+        return Object.keys(newErrors).length === 0;
+    };
+
+    
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        
+        if (!validate()) return;
+
+        
         const data = {
             id: lastId + 1,
             email,
             password
-        }
-        dispatch(
-            add(data)
-        )
-        alert("El usuario se agrego correctamente")
-        navigate("/")
-            };
-    
+        };
+
+        
+        dispatch(add(data));
+
+        alert("El usuario se agregó correctamente");
+
+       
+        navigate("/");
+    };
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -37,6 +81,9 @@ function FormLogin() {
                         onChange={(e) => setEmail(e.target.value)} 
                         required 
                     />
+                    
+                    {errors.email && <div className="text-danger">{errors.email}</div>}
+
                     <div id="emailHelp" className="form-text">Nunca compartiremos tu correo con nadie más.</div>
                 </div>
 
@@ -50,6 +97,8 @@ function FormLogin() {
                         onChange={(e) => setPassword(e.target.value)} 
                         required 
                     />
+                    
+                    {errors.password && <div className="text-danger">{errors.password}</div>}
                 </div>
 
                 <div className="mb-3">
@@ -58,17 +107,20 @@ function FormLogin() {
                         type="password" 
                         className="form-control" 
                         id="confirmPassword" 
-                        //value={confirmPassword} 
-                       // onChange={(e) => setConfirmPassword(e.target.value)} 
+                        value={confirmPassword} 
+                        onChange={(e) => setConfirmPassword(e.target.value)} 
                         required 
                     />
+                   
+                    {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
                 </div>
 
-                <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
+                <button type="submit" className="btn btn-primary">Registrar</button>
             </form>
         </>
     );
 }
 
 export default FormLogin;
+
 
