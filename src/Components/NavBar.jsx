@@ -1,34 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/NavBar.css';
-import { useNavigate } from 'react-router-dom';
 import { logout, isLogin, user } from '../middleware/auth';
+
 const NavBar = () => {
   const navigate = useNavigate();
+  const [menuAbierto, setMenuAbierto] = useState(false);
+
   const handleLogout = () => {
     logout();
     navigate('/Login');
   };
+
+  const toggleMenu = () => {
+    setMenuAbierto(!menuAbierto);
+  };
+
   return (
     <nav className="NavBar px-4 py-2">
-      {isLogin() ? (
-        <div className="Usuario">
-          <span>Bienvenido, {user()}</span>
-          <div className="Botones">
-            <Link to="/Home">Inicio</Link>
-            <Link to="/Favoritos">Favoritos</Link>
-            <Link to="/Productos">Gestion</Link>
-            <Link to="/Login" onClick={handleLogout}>Cerrar sesión</Link>
-            <Link to="/FormLogin">Registro</Link>
-          </div>
-        </div>
-      ) : (
-        <div className="Botones">
-          <Link to="/Login">Iniciar sesión</Link>
-          <Link to="/FormLogin">Registro</Link>
-        </div>
-      )}
-        
+      <div className="d-flex justify-content-between w-100 align-items-center">
+        {isLogin() && <span className="text-white">Bienvenido, {user()}</span>}
+        <button className="Hamburguesa" onClick={toggleMenu}>
+          &#9776; {/* Este es el ícono ☰ */}
+        </button>
+      </div>
+
+      <div className={`Botones ${menuAbierto ? 'Mostrar' : ''}`}>
+        {isLogin() ? (
+          <>
+            <Link to="/Home" onClick={() => setMenuAbierto(false)}>Inicio</Link>
+            <Link to="/Favoritos" onClick={() => setMenuAbierto(false)}>Favoritos</Link>
+            <Link to="/Productos" onClick={() => setMenuAbierto(false)}>Gestion</Link>
+            <Link to="/Login" onClick={() => { handleLogout(); setMenuAbierto(false); }}>Cerrar sesión</Link>
+            <Link to="/FormLogin" onClick={() => setMenuAbierto(false)}>Registro</Link>
+          </>
+        ) : (
+          <>
+            <Link to="/Login" onClick={() => setMenuAbierto(false)}>Iniciar sesión</Link>
+            <Link to="/FormLogin" onClick={() => setMenuAbierto(false)}>Registro</Link>
+          </>
+        )}
+      </div>
     </nav>
   );
 };
