@@ -1,23 +1,36 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFavorito } from '../store/ProductosSlice';
 import '../Styles/Cards.css';
 
 function ProductoCard() {
   const { entities, favoritos } = useSelector((state) => state.productos);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+
   const dispatch = useDispatch();
 
   const handleToggleFavorito = (id) => {
     dispatch(toggleFavorito(id));
   }
 
+  const productosFiltrados = categoriaSeleccionada
+    ? entities.filter((producto) => producto.category === categoriaSeleccionada)
+    : entities;
 
 
   return (
     <>
       <h1 className="mt-4 text-center">Productos</h1>
+      <div className="text-center my-3">
+        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada('')}>Todas</button>
+        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("men's clothing")}>Hombre</button>
+        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("women's clothing")}>Mujer</button>
+        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("electronics")}>Electrónica</button>
+      </div>
+
       <div className="container d-flex flex-wrap justify-content-center gap-4 mt-4">
-        {entities.map((producto) => (
+        {productosFiltrados.map((producto) => (
           <div
             className="card mb-4 shadow-sm rounded-3"
             style={{ width: '18rem' }}
