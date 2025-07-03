@@ -14,6 +14,7 @@ function ProductoList() {
     }
     return (
         <>
+            <Link to="/CrearProducto" className='btn btn-primary mx-2 my-2'>Crear producto</Link>
             <div className="container mt-5 mb-0">
                 <div className="table-responsive">
                     <table className="table table-bordered table-striped table-hover my-3 custom-table"> 
