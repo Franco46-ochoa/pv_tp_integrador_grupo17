@@ -13,14 +13,17 @@ import Login from './pages/Login';
 import FormLogin from './pages/FormLogin';
 import PrivateRoute from './hooks/PrivateRoute';
 import PublicRoute from './hooks/PublicRoute';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div id="top" className="d-flex flex-column min-vh-100">
       <Header />
       <NavBar />
+      <ToastContainer /> 
       <main className="flex-grow-1">
         <Routes>
-          <Route path="/" element={<PrivateRoute component={Home}></PrivateRoute>} />
+          <Route path="/" element={<PublicRoute component={Login}></PublicRoute>} />
           <Route path="/Home" element={<PrivateRoute component={Home}></PrivateRoute>} />
           <Route path="/Producto/:id" element={<PrivateRoute component={ProductoDetalle}></PrivateRoute>} />
           <Route path="/Favoritos" element={<PrivateRoute component={Favoritos}></PrivateRoute>} />
@@ -33,6 +36,7 @@ function App() {
           <Route path="*" element={<PrivateRoute component={<h1>404 - Página no encontrada</h1>} />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
   );

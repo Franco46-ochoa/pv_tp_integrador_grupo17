@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { add } from "../store/UsersSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function FormLogin() {    
     const dispatch = useDispatch();
@@ -61,15 +63,15 @@ function FormLogin() {
 
         
         dispatch(add(data));
-
-        alert("El usuario se agregó correctamente");
-
-       
-        navigate("/Login");
+        toast.success("El usuario se agregó correctamente");
+        setTimeout(() => {
+            navigate("/Home");
+        }, 1000);
     };
 
     return (
         <>
+            <ToastContainer />
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Correo Electrónico</label>
@@ -114,9 +116,9 @@ function FormLogin() {
                    
                     {errors.confirmPassword && <div className="text-danger">{errors.confirmPassword}</div>}
                 </div>
-
                 <button type="submit" className="btn btn-primary">Registrar</button>
             </form>
+            
         </>
     );
 }

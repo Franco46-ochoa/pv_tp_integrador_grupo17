@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -15,17 +17,21 @@ function Login() {
         const user = users.find((user) => user.email === email && user.password === password);
         if (user) {
             localStorage.setItem('auth', email)
-            alert('Inicio de sesión Exitoso')
-            navigate('/home');
+            toast.success("Inicio de sesión exitoso")
+            setTimeout(() => {
+                navigate("/Home");
+            }, 1000);
+
         } else {
-            alert("Credenciales Invalidas")
+            toast.error("Credenciales Invalidas")
             setEmail("");
             setPassword("");
-            alert('Inicio de sesión Fallido')
+            toast.warn('Inicio de sesión Fallido')
         }
     };
     return (
         <>
+            <ToastContainer />
             <form onSubmit={handleLogin}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Correo Electrónico:</label>
@@ -37,7 +43,9 @@ function Login() {
                     <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
+                
             </form>
+            
         </>
     )
 }

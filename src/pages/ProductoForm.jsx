@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { add, edit } from '../store/ProductosSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ProductoForm({ edit: isEdit }) {
   const { id } = useParams();
@@ -36,7 +38,7 @@ export default function ProductoForm({ edit: isEdit }) {
 
   useEffect(() => {
     if (isEdit && !productoExistente) {
-      alert('Producto no encontrado');
+      toast.warn('Producto no encontrado');
       navigate('/');
     }
   }, [isEdit, productoExistente, navigate]);
@@ -51,51 +53,55 @@ export default function ProductoForm({ edit: isEdit }) {
 
     // Validaciones
     if (formData.title.trim().length < 3) {
-      alert('El título debe tener al menos 3 caracteres.');
+      toast.error('El título debe tener al menos 3 caracteres.');
       return;
     }
 
     if (Number(formData.price) <= 0) {
-      alert('El precio debe ser mayor a cero.');
+      toast.error('El precio debe ser mayor a cero.');
       return;
     }
 
     if (formData.category.trim().length < 3) {
-      alert('La categoría debe tener al menos 3 caracteres.');
+      toast.error('La categoría debe tener al menos 3 caracteres.');
       return;
     }
 
     if (formData.description.trim().length < 10) {
-      alert('La descripción debe tener al menos 10 caracteres.');
+      toast.error('La descripción debe tener al menos 10 caracteres.');
       return;
     }
 
     try {
       new URL(formData.image);
       if (!formData.image.match(/\.(jpg|jpeg|png|gif|webp)$/i)) {
-        alert('La URL debe apuntar a una imagen (.jpg, .png, etc).');
+        toast.error('La URL debe apuntar a una imagen (.jpg, .png, etc).');
         return;
       }
     } catch {
-      alert('La URL de imagen no es válida.');
+      toast.error('La URL de imagen no es válida.');
       return;
     }
 
     if (isEdit) {
       dispatch(edit({ ...formData, id: parseInt(id) }));
-      alert('Producto editado exitosamente');
+      toast.success('Producto editado exitosamente');     
     } else {
       const ultimoId = productos.length ? Math.max(...productos.map(p => p.id)) : 100;
       const nuevoId = ultimoId + 1;
       dispatch(add({ ...formData, id: nuevoId }));
-      alert('Producto creado exitosamente');
+      toast.success('Producto creado exitosamente');
     }
+    setTimeout(() => {
+      navigate("/Home");
+    }, 1000);
 
-    navigate('/Home');
+    
   };
 
   return (
     <div className="container my-5 d-flex justify-content-center">
+      <ToastContainer />
       <div className="card shadow p-4" style={{ maxWidth: '600px', width: '100%' }}>
         <h3 className="text-center mb-4">
           {isEdit ? 'Editar Producto' : 'Crear Producto'}
