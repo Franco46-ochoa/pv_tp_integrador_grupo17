@@ -21,16 +21,22 @@ function ProductoCard() {
 
   return (
     <>
+      
       <h1 className="mt-4 text-center">Productos</h1>
       <div className="text-center my-3">
         <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada('')}>Todas</button>
         <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("men's clothing")}>Hombre</button>
         <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("women's clothing")}>Mujer</button>
+        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("jewelery")}>Joyería</button>
         <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("electronics")}>Electrónica</button>
       </div>
-
+      
       <div className="container d-flex flex-wrap justify-content-center gap-4 mt-4">
+        
         {productosFiltrados.map((producto) => (
+          console.log("Filtro seleccionado:", categoriaSeleccionada),
+          console.log("Productos filtrados:", productosFiltrados),
+
           <div
             className="card mb-4 shadow-sm rounded-3"
             style={{ width: '18rem' }}
