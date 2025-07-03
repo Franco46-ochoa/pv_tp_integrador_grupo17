@@ -30,16 +30,41 @@
   color: #141414;
   font-weight: 600;
 }
+/* Estilo del botón de hamburguesa */
+.Hamburguesa {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
   .NavBar {
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
   }
 
+ 
+  .Hamburguesa {
+    display: block;
+  }
+
   .Botones {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+  }
+  .Botones.Mostrar {
+    display: flex;
+    max-height: 500px; /* Ajustá según el tamaño del contenido */
   }
 }
