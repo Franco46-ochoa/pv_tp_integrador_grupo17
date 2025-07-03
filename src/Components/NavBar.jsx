@@ -17,7 +17,7 @@ const NavBar = () => {
           <div className="Botones">
             <Link to="/Home">Inicio</Link>
             <Link to="/Favoritos">Favoritos</Link>
-            <Link to="/Gestion">Gestion</Link>
+            <Link to="/Productos">Gestion</Link>
             <Link to="/CrearProducto">Crear producto</Link>
             <Link to="/Login" onClick={handleLogout}>Cerrar sesión</Link>
             <Link to="/FormLogin">Registro</Link>
