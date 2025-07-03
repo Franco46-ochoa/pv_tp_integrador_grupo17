@@ -24,8 +24,8 @@ function App() {
           <Route path="/Home" element={<PrivateRoute component={Home}></PrivateRoute>} />
           <Route path="/Producto/:id" element={<PrivateRoute component={ProductoDetalle}></PrivateRoute>} />
           <Route path="/Favoritos" element={<PrivateRoute component={Favoritos}></PrivateRoute>} />
-          <Route path="/CrearProducto" element={<PrivateRoute component={ProductoForm}></PrivateRoute>} />
-          <Route path="/EditarProducto/:id" element={<PrivateRoute component={ProductoForm}></PrivateRoute>} />
+          <Route path="/CrearProducto" element={<PrivateRoute component={ProductoForm} edit={false}></PrivateRoute>} />
+          <Route path="/EditarProducto/:id" element={<PrivateRoute component={ProductoForm} edit={true} ></PrivateRoute>} />
           <Route path="/Acerca" element={<Acerca/>} />
           <Route path="/Productos" element={<PrivateRoute component={ProductoList}></PrivateRoute>} />
           <Route path="/Login" element={<PublicRoute component={Login}></PublicRoute>} />
