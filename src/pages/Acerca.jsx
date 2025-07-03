@@ -9,22 +9,16 @@ const creadores = [
     imagen: '/Fotos/Franco.png',
   },
   {
-    nombre: 'Compañero 1',
+    nombre: 'Taritolay Gonzalo Ricardo',
     descripcion: 'Estudiante de la carrera Analista Programador Universitario.',
-    lu: 'APU001111',
-    imagen: '/Fotos/compañero1.jpg',
+    lu: 'APU004293',
+    imagen: '/Fotos/gonzalo.png',
   },
   {
     nombre: 'Compañero 2',
     descripcion: 'Estudiante de la carrera Analista Programador Universitario.',
     lu: 'APU002222',
     imagen: '/Fotos/compañero2.jpg',
-  },
-  {
-    nombre: 'Compañero 3',
-    descripcion: 'Estudiante de la carrera Analista Programador Universitario.',
-    lu: 'APU003333',
-    imagen: '/Fotos/compañero3.jpg',
   },
   {
     nombre: 'Ortiz Marcelo Fernando',
