@@ -65,7 +65,7 @@ function FormLogin() {
         alert("El usuario se agregó correctamente");
 
        
-        navigate("/");
+        navigate("/Login");
     };
 
     return (

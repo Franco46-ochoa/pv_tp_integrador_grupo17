@@ -8,6 +8,7 @@ export default function ProductoForm({ edit: isEdit }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const productos = useSelector(state => state.productos.entities);
+  const categorias = [...new Set(productos.map(p => p.category))];
 
   const productoExistente = isEdit
     ? productos.find(p => p.id === parseInt(id))
@@ -129,17 +130,22 @@ export default function ProductoForm({ edit: isEdit }) {
 
           <div className="mb-3">
             <label className="form-label">Categoría</label>
-            <input
-              type="text"
+            <select
               name="category"
-              className="form-control"
+              className="form-select"
               value={formData.category}
               onChange={handleChange}
-              placeholder="Ej. Electrónica"
               required
-            />
+            >
+              <option value="">Seleccionar categoría</option>
+              {categorias.map(cat => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
           </div>
-
+          
           <div className="mb-3">
             <label className="form-label">Imagen (URL)</label>
             <input
