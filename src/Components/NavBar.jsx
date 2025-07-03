@@ -20,6 +20,7 @@ const NavBar = () => {
             <Link to="/Gestion">Gestion</Link>
             <Link to="/CrearProducto">Crear producto</Link>
             <Link to="/Login" onClick={handleLogout}>Cerrar sesión</Link>
+            <Link to="/FormLogin">Registro</Link>
           </div>
         </div>
       ) : (
@@ -28,7 +29,7 @@ const NavBar = () => {
           <Link to="/FormLogin">Registro</Link>
         </div>
       )}
-
+        
     </nav>
   );
 };
