@@ -11,6 +11,8 @@ import ProductoList from './pages/ProductoList';
 import Footer from './Components/Footer';
 import Login from './pages/Login';
 import FormLogin from './pages/FormLogin';
+import PrivateRoute from './hooks/PrivateRoute';
+import PublicRoute from './hooks/PublicRoute';
 function App() {
   return (
     <div id="top" className="d-flex flex-column min-vh-100">
@@ -18,17 +20,17 @@ function App() {
       <NavBar />
       <main className="flex-grow-1">
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Producto/:id" element={<ProductoDetalle />} />
-          <Route path="/Favoritos" element={<Favoritos />} />
-          <Route path="/CrearProducto" element={<ProductoForm />} />
-          <Route path="/EditarProducto/:id" element={<ProductoForm edit />} />
-          <Route path="/Acerca" element={<Acerca />} />
-          <Route path="/Productos" element={<ProductoList />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<PrivateRoute component={Home}></PrivateRoute>} />
+          <Route path="/Home" element={<PrivateRoute component={Home}></PrivateRoute>} />
+          <Route path="/Producto/:id" element={<PrivateRoute component={ProductoDetalle}></PrivateRoute>} />
+          <Route path="/Favoritos" element={<PrivateRoute component={Favoritos}></PrivateRoute>} />
+          <Route path="/CrearProducto" element={<PrivateRoute component={ProductoForm}></PrivateRoute>} />
+          <Route path="/EditarProducto/:id" element={<PrivateRoute component={ProductoForm}></PrivateRoute>} />
+          <Route path="/Acerca" element={<Acerca/>} />
+          <Route path="/Productos" element={<PrivateRoute component={ProductoList}></PrivateRoute>} />
+          <Route path="/Login" element={<PublicRoute component={Login}></PublicRoute>} />
           <Route path="/FormLogin" element={<FormLogin />} />
-          <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
+          <Route path="*" element={<PrivateRoute component={<h1>404 - Página no encontrada</h1>} />} />
         </Routes>
       </main>
       <Footer />
