@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { remove } from '../ProductosSlice';
+import { remove } from '../store/ProductosSlice';
 import '../Styles/productolist.css'; // Importa el CSS específico
 
 function ProductoList() {
