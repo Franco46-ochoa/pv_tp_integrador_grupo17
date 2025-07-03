@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-    { id: 1, username: "user", password: "user" }
+    { id: 1, email: "grupo17@gmail.com", password: "grupo17" }
 ]
 
 const UsersSlice = createSlice({
@@ -13,12 +13,10 @@ const UsersSlice = createSlice({
         add: (state, action) => {
             state.entities.push(action.payload);
         },
-        remove: (state, action) => {
-            return state.filter(user => user.id !== action.payload.id);
-        }
+        
     }
 });
 
-export const { add, remove } = UsersSlice.actions;
+export const { add } = UsersSlice.actions;
 
 export default UsersSlice.reducer;
