@@ -4,14 +4,16 @@
   background-color:#07111D; /* Fondo oscuro */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
   color: #f0f0f0; /* Texto claro */
+  max-width:100%;
 }
 
 /*Tema claro*/
 
 .header-container.claro {
-  background-color:#eaf2f8; /* Fondo claro */
+  background-color:#9cbee7; /* Fondo claro */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
   color: black; /* Texto oscuro */
+  max-width:100%;
 }
 
 /* Logo */
@@ -76,3 +78,4 @@
     letter-spacing: 1px;
   }
 }
+
