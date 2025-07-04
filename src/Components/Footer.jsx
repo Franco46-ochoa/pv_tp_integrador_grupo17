@@ -10,10 +10,10 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import '../Styles/Footer.css';
 
-function Footer() {
+const Footer = ({ tema }) => {
   return (
-    <footer className="footer-custom pt-4 pb-4 mt-0">
-      <div className="container">
+    <footer> 
+      <div  className={`container footer ${tema} pt-4 pb-4 mt-0`}> 
         <div className="row align-items-center">
 
           {/* Logo */}

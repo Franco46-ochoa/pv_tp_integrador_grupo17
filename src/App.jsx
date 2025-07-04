@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import NavBar from './Components/NavBar';
@@ -15,11 +15,21 @@ import PrivateRoute from './hooks/PrivateRoute';
 import PublicRoute from './hooks/PublicRoute';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-function App() {
+const App = () => {
+  const [tema, setTema] = useState('claro');
+
+  const cambiarTema = () => {
+    setTema(tema === 'claro' ? 'oscuro' : 'claro');
+  };
+
+  useEffect(() => {
+    document.body.className = tema; // Cambia la clase del body
+  }, [tema]);
+  
   return (
     <div id="top" className="d-flex flex-column min-vh-100">
-      <Header />
-      <NavBar />
+      <Header tema={tema} cambiarTema={cambiarTema}/>
+      <NavBar tema={tema} />
       <ToastContainer /> 
       <main className="flex-grow-1">
         <Routes>
@@ -37,7 +47,7 @@ function App() {
         </Routes>
       </main>
 
-      <Footer />
+      <Footer tema={tema}/>
     </div>
   );
 }

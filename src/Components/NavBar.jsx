@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/NavBar.css';
 import { logout, isLogin, user } from '../middleware/auth';
 
-const NavBar = () => {
+
+const NavBar = ({ tema }) => {
   const navigate = useNavigate();
   const [menuAbierto, setMenuAbierto] = useState(false);
 
@@ -17,7 +18,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="NavBar px-4 py-2">
+    <nav className={`NavBar ${tema} px-4 py-2`}>
       <div className="d-flex justify-content-between w-100 align-items-center">
         {isLogin() && <span className="text-white">Bienvenido, {user()}</span>}
         <button className="Hamburguesa" onClick={toggleMenu}>
