@@ -1,21 +1,30 @@
-/* Barra de navegación */
-/*Estilos tema oscuro*/
+/* =======================
+   NavBar - Estilos Generales
+   ======================= */
+
+/* Tema oscuro */
 .NavBar.oscuro {
   background-color: #172d43; /* Fondo oscuro */
+  color: #f0f0f0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para el tema claro */
+/* Tema claro */
 .NavBar.claro {
   background-color: #a8c3e4; /* Fondo claro */
+  color: #141414;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
+/* =======================
+   Estilo de botones y texto
+   ======================= */
 
 /* Contenedor de botones */
 .Botones {
@@ -23,36 +32,58 @@
   gap: 1.5rem;
 }
 
-/* Estilo de los links */
+/* Links comunes */
 .Botones a {
-  color: #f0f0f0;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  white-space: nowrap; /* Evita que se corte el texto en varias líneas */
+  white-space: nowrap;
 }
 
-
-/* Hover de los links */
+/* Hover */
 .Botones a:hover {
   background-color: #f39c12;
   color: #141414;
   font-weight: 600;
 }
-/* Estilo del botón de hamburguesa */
+
+/* Cambios de color de texto según tema */
+.NavBar.oscuro .Botones a,
+.NavBar.oscuro span {
+  color: #f0f0f0;
+}
+
+.NavBar.claro .Botones a,
+.NavBar.claro span {
+  color: #141414;
+}
+
+/* =======================
+   Botón de hamburguesa
+   ======================= */
 .Hamburguesa {
   display: none;
   font-size: 2rem;
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
 }
 
-/* Responsive */
+/* Cambiar color según tema */
+.NavBar.oscuro .Hamburguesa {
+  color: #f0f0f0;
+}
+
+.NavBar.claro .Hamburguesa {
+  color: #141414;
+}
+
+/* =======================
+   Responsive
+   ======================= */
 @media (max-width: 768px) {
   .NavBar {
     flex-direction: column;
@@ -60,7 +91,6 @@
     justify-content: center;
   }
 
- 
   .Hamburguesa {
     display: block;
   }
@@ -75,8 +105,9 @@
     overflow: hidden;
     max-height: 0;
   }
+
   .Botones.Mostrar {
     display: flex;
-    max-height: 500px; /* Ajustá según el tamaño del contenido */
+    max-height: 500px; /* Ajustable según contenido */
   }
 }
