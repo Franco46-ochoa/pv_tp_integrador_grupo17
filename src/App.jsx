@@ -8,6 +8,7 @@ import Favoritos from './pages/Favoritos';
 import ProductoForm from './pages/ProductoForm';
 import Acerca from './pages/Acerca';
 import ProductoList from './pages/ProductoList';
+import NotFound from './pages/NotFound';
 import Footer from './Components/Footer';
 import Login from './pages/Login';
 import FormLogin from './pages/FormLogin';
@@ -43,7 +44,7 @@ const App = () => {
           <Route path="/Productos" element={<PrivateRoute component={ProductoList}></PrivateRoute>} />
           <Route path="/Login" element={<PublicRoute component={Login}></PublicRoute>} />
           <Route path="/FormLogin" element={<FormLogin />} />
-          <Route path="*" element={<PrivateRoute component={<h1>404 - Página no encontrada</h1>} />} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </main>
 
