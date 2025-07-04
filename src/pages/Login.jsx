@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../Styles/Login.css';
@@ -31,26 +31,29 @@ function Login() {
     return (
         <>
             <ToastContainer />
-
             <div className="container-fluid login-page d-flex justify-content-center align-items-center">
                 <div className="card p-4 login-box shadow">
-                    <h1 className="text-center mb-4 ">Bienvenido</h1>
+                    <h1 className="text-center mb-4 ">Iniciar Sesión</h1>
                     <form onSubmit={handleLogin}>
                         <div className="mb-3">
-                            <input
-                                type="email"
+                            <label htmlFor="email" className="form-label">Correo Electrónico:</label>
+                            <input 
+                                type="email" 
                                 className="form-control custom-input"
                                 placeholder="Correo Electrónico"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
+                                id="email" 
+                                aria-describedby="emailHelp" 
+                                value={email} 
+                                onChange={(e) => setEmail(e.target.value)} 
                             />
+                            <div id="emailHelp" className="form-text">Nosotros nunca compartiremos tu correo electrónico.</div>
                         </div>
                         <div className="mb-3">
                             <input
                                 type="password"
                                 className="form-control custom-input"
                                 placeholder="Contraseña"
+                                id='password'
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
@@ -58,6 +61,9 @@ function Login() {
                         </div>
                         <button type="submit" className="btn btn-primary w-100">Iniciar Sesión</button>
                     </form>
+                    <div className="text-center mt-3">
+                        <Link to="/FormLogin" className="text-decoration-none">¿No tienes una cuenta? Regístrate aquí</Link>
+                    </div>
                 </div>
             </div>
         </>
