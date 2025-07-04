@@ -2,18 +2,38 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { remove } from '../store/ProductosSlice';
 import '../Styles/productolist.css'; // Importa el CSS específico
+import { ToastContainer, toast } from 'react-toastify';
 
 function ProductoList() {
     const { entities } = useSelector((state) => state.productos);
     const dispatch = useDispatch();
 
     const handleEliminar = (id) => {
-        if (window.confirm("¿Seguro que quieres eliminar este producto?")) {
-            dispatch(remove(id));
-        }
-    }
+        const toastId = toast.warn(
+            <div>
+                <p>¿Seguro que quieres eliminar este producto?</p>
+                <button onClick={() => {
+                    dispatch(remove(id));
+                    toast.success("Producto eliminado con éxito");
+                    toast.dismiss(toastId); // Cierra el toast
+                }}>Sí</button>
+                <button onClick={() => {
+                    toast.info("Eliminación cancelada");
+                    toast.dismiss(toastId); // Cierra el toast
+                }}>No</button>
+            </div>,
+            {
+                autoClose: false,
+                closeOnClick: false,
+                draggable: false,
+                position: "top-center",
+            }
+        );
+    };
+
     return (
-        <>
+        <div>
+            <ToastContainer />
             <Link to="/CrearProducto" className='btn btn-primary mx-2 my-2'>Crear producto</Link>
             <div className="container mt-5 mb-0">
                 <div className="table-responsive">
@@ -28,9 +48,9 @@ function ProductoList() {
                             </tr>
                         </thead>
                         <tbody>
-                            {entities.map((producto, index) => (
+                            {entities.map((producto) => (
                                 <tr key={producto.id}>
-                                    <th scope="row">{index + 1}</th>
+                                    <th scope="row">{producto.id}</th>
                                     <td>{producto.title}</td>
                                     <td>{producto.category}</td>
                                     <td>${producto.price}</td>
@@ -55,8 +75,8 @@ function ProductoList() {
                     </table>
                 </div>
             </div>
-        </>
-    )
+        </div>
+    );
 }
 
 export default ProductoList;
