@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { add } from "../store/UsersSlice";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../Styles/FormLogin.css';
+import '../Styles/Login.css';
 
 const FormRegister = () => {    
     const dispatch = useDispatch();
