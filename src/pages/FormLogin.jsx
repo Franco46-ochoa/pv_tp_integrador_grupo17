@@ -69,6 +69,7 @@ function FormLogin() {
                                 required
                             />
                             {errors.email && <div className="text-danger">{errors.email}</div>}
+                             <div id="emailHelp" className="form-text">Nunca compartiremos tu correo con nadie más.</div>
                         </div>
                         <div className="mb-3">
                             <input
