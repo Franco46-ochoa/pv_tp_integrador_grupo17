@@ -3,6 +3,12 @@
 body {
   background-color: #587286; /* Color de fondo general */
 }
+.conteiner.oscuro{
+  background-color: #1e2a3a ;
+}
+.conteiner.oscuro{
+  background-color: #ff0000 ;
+}
 
 .card {
   background-color: #1e2a3a ;/* Fondo de cada tarjeta */

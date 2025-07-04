@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFavorito } from '../store/ProductosSlice';
 import '../Styles/Cards.css';
-
-function ProductoCard() {
+const ProductoCard = ({ tema }) => {
   const { entities, favoritos } = useSelector((state) => state.productos);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
 
@@ -24,14 +23,14 @@ function ProductoCard() {
       
       <h1 className="mt-4 text-center">Productos</h1>
       <div className="text-center my-3">
-        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada('')}>Todas</button>
-        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("men's clothing")}>Hombre</button>
-        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("women's clothing")}>Mujer</button>
-        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("jewelery")}>Joyería</button>
-        <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("electronics")}>Electrónica</button>
+        <button className="badge  text-bg-dark m-1" onClick={() => setCategoriaSeleccionada('')}>Todas</button>
+        <button className="badge text-bg-dark m-1" onClick={() => setCategoriaSeleccionada("men's clothing")}>Hombre</button>
+        <button className="badge text-bg-dark m-1" onClick={() => setCategoriaSeleccionada("women's clothing")}>Mujer</button>
+        <button className="badge text-bg-dark m-1" onClick={() => setCategoriaSeleccionada("jewelery")}>Joyería</button>
+        <button className="badge text-bg-dark m-1" onClick={() => setCategoriaSeleccionada("electronics")}>Electrónica</button>
       </div>
       
-      <div className="container d-flex flex-wrap justify-content-center gap-4 mt-4" style={{ backgroundColor: '#172d43' }}>
+      <div className={`container ${tema} d-flex flex-wrap justify-content-center gap-4 mt-4` }>
         
         {productosFiltrados.map((producto) => (
           console.log("Filtro seleccionado:", categoriaSeleccionada),

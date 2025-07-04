@@ -5,13 +5,14 @@
 }
 /*Tema claro*/
 body.claro {
-    background-color:lightgreen; /*Fondo claro*/
+   
+    background: 	#d4e5fa; /*Fondo claro*/
     color: black; /* Texto oscuro*/
 }
 
 /*Tema oscuro*/
 body.oscuro {
-    background-color: #07111D; /*Fondo oscuro*/
+    background-color: #26476f; /*Fondo oscuro*/
     color: #f0f0f0; /* Texto claro*/
 }
 

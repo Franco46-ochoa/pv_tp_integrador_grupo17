@@ -1,7 +1,6 @@
 /* Fondo general de la pantalla de login */
 .login-page {
     min-height: calc(100vh - 160px); /* Ajustar si el header/footer cambian */
-    background: 	#1f3a5a;
     padding-top: 10px;
     display: flex;
     justify-content: center;

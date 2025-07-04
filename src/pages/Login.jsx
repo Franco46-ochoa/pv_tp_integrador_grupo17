@@ -32,6 +32,7 @@ function Login() {
         <>
             <ToastContainer />
             <div className="container-fluid login-page d-flex justify-content-center align-items-center">
+                    
                 <div className="card p-4 login-box shadow">
                     <h1 className="text-center mb-4 ">Iniciar Sesión</h1>
                     <form onSubmit={handleLogin}>

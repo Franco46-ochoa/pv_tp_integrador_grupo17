@@ -1,16 +1,18 @@
 /* Estilos generales del footer */
 /* Estilos para el tema claro */
 .footer.claro {
-    background-color: #9cbee7;  /* Color claro */
-    color: black; /* Texto oscuro */
-    max-width: 100%;
+    background-color:#9cbee7; /* Fondo claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+  color: #000; /* Texto oscuro */
+  max-width:100%;
 }
 
 /* Estilos para el tema oscuro */
 .footer.oscuro {
-    background-color: #07111D; /* Color oscuro */
-    color: #f0f0f0; /* Texto claro */
-    max-width: 100%;
+    background-color:#07111D; /* Fondo oscuro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+  color: #f0f0f0; /* Texto claro */
+  max-width:100%;
 }
 
 
@@ -46,7 +48,7 @@
 /* Botón Acerca */
 .footer-acerca-link {
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   background-color: #2ECC71;
   padding: 4px 12px;
@@ -56,6 +58,7 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-bottom: 10px;
 }
+
 
 .footer-acerca-link:hover {
   background-color: #27AE60;
