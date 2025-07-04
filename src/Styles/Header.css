@@ -9,7 +9,7 @@
 /*Tema claro*/
 
 .header-container.claro {
-  background-color:#eaf2f8; /* Fondo claro */
+  background-color:#7a8892; /* Fondo claro */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
   color: black; /* Texto oscuro */
 }
