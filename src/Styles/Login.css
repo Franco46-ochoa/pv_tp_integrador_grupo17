@@ -1,0 +1,42 @@
+/* Fondo general de la pantalla de login */
+.login-page {
+    min-height: calc(100vh - 160px); /* Ajustar si el header/footer cambian */
+    background: 	#1f3a5a;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Caja contenedora del login */
+.login-box {
+    max-width: 400px;
+    width: 100%;
+    background: #07111D; 
+}
+
+/* Campos de entrada */
+.custom-input {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Placeholder */
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Efecto al enfocar */
+.custom-input:focus {
+    background: #fff;
+    color: #0d1117;
+}
+
+/* Título Bienvenido */
+.login-box h1 {
+    color: rgb(0, 0, 0); /* Asegura que el texto se vea */
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+}

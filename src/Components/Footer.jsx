@@ -18,7 +18,7 @@ const Footer = ({ tema }) => {
 
           {/* Logo */}
           <div className="col-md-4 mb-3 mb-md-0 text-center text-md-start">
-            <img src="/Logo de LIVETECH.png" alt="Logo de LIVETECH" className="footer-logo me-4" />
+            <img src="/Logo de LIVETECh.png" alt="Logo de LIVETECH" className="footer-logo me-4" />
           </div>
 
           {/* Botón "Arriba!" */}

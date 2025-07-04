@@ -33,7 +33,6 @@ const NavBar = ({ tema }) => {
             <Link to="/Favoritos" onClick={() => setMenuAbierto(false)}>Favoritos</Link>
             <Link to="/Productos" onClick={() => setMenuAbierto(false)}>Gestion</Link>
             <Link to="/Login" onClick={() => { handleLogout(); setMenuAbierto(false); }}>Cerrar sesión</Link>
-            <Link to="/FormLogin" onClick={() => setMenuAbierto(false)}>Registro</Link>
           </>
         ) : (
           <>

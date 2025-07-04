@@ -31,7 +31,7 @@ function ProductoCard() {
         <button className="btn btn-outline-primary m-1" onClick={() => setCategoriaSeleccionada("electronics")}>Electrónica</button>
       </div>
       
-      <div className="container d-flex flex-wrap justify-content-center gap-4 mt-4">
+      <div className="container d-flex flex-wrap justify-content-center gap-4 mt-4" style={{ backgroundColor: '#172d43' }}>
         
         {productosFiltrados.map((producto) => (
           console.log("Filtro seleccionado:", categoriaSeleccionada),

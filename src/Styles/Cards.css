@@ -1,11 +1,11 @@
 /* Cards.css */
 
 body {
-  background-color: #f4f8fb; /* Color de fondo general */
+  background-color: #587286; /* Color de fondo general */
 }
 
 .card {
-  background-color: #ffffff; /* Fondo de cada tarjeta */
+  background-color: #1e2a3a ;/* Fondo de cada tarjeta */
   transition: transform 0.2s ease-in-out;
   border: 2px solid #ffffff;
 }

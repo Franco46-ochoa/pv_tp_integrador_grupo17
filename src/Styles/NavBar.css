@@ -10,7 +10,7 @@
 
 /* Estilos para el tema claro */
 .NavBar.claro {
-  background-color: salmon; /* Fondo claro */
+  background-color: #dae6f1; /* Fondo claro */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -32,7 +32,9 @@
   padding: 6px 12px;
   border-radius: 6px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; /* Evita que se corte el texto en varias líneas */
 }
+
 
 /* Hover de los links */
 .Botones a:hover {
