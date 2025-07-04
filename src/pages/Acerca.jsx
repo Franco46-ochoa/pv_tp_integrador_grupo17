@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../styles/Acerca.css';
+import '../Styles/Acerca.css';
 
 const creadores = [
   {
