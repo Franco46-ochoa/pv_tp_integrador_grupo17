@@ -15,10 +15,10 @@ const creadores = [
     imagen: '/Fotos/gonzalo.png',
   },
   {
-    nombre: 'Compañero 2',
+    nombre: 'Antivilo Aldo Dante',
     descripcion: 'Estudiante de la carrera Analista Programador Universitario.',
-    lu: 'APU002222',
-    imagen: '/Fotos/compañero2.jpg',
+    lu: 'APU005381',
+    imagen: '/Fotos/granPapi.jpeg',
   },
   {
     nombre: 'Ortiz Marcelo Fernando',
