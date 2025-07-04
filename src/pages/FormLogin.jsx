@@ -20,6 +20,7 @@ const FormRegister = () => {
     const validate = () => {
         const newErrors = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if (!emailRegex.test(email)) {
             newErrors.email = "El correo no es válido.";
         }
@@ -44,7 +45,7 @@ const FormRegister = () => {
         };
 
         dispatch(add(data));
-        toast.success("El usuario se agregó correctamente");
+        toast.success("Registro exitoso");
         setTimeout(() => {
             navigate("/Home");
         }, 1000);

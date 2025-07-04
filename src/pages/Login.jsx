@@ -32,15 +32,17 @@ const Login = () => {
     return (
         <div className="container mt-5">
             <ToastContainer />
-            <div className="row justify-content-center">
-                <div className="col-md-6">
-                    <h2 className="text-center mb-4">Iniciar Sesión</h2>
+            <div className="container-fluid login-page d-flex justify-content-center align-items-center">
+                    
+                <div className="card p-4 login-box shadow">
+                    <h1 className="text-center mb-4 ">Iniciar Sesión</h1>
                     <form onSubmit={handleLogin}>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Correo Electrónico:</label>
                             <input 
                                 type="email" 
-                                className="form-control" 
+                                className="form-control custom-input"
+                                placeholder="Correo Electrónico"
                                 id="email" 
                                 aria-describedby="emailHelp" 
                                 value={email} 
@@ -49,13 +51,14 @@ const Login = () => {
                             <div id="emailHelp" className="form-text">Nosotros nunca compartiremos tu correo electrónico.</div>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="password" className="form-label">Contraseña:</label>
-                            <input 
-                                type="password" 
-                                className="form-control" 
-                                id="password" 
-                                value={password} 
-                                onChange={(e) => setPassword(e.target.value)} 
+                            <input
+                                type="password"
+                                className="form-control custom-input"
+                                placeholder="Contraseña"
+                                id='password'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
                             />
                         </div>
                         <button type="submit" className="btn btn-primary w-100">Iniciar Sesión</button>

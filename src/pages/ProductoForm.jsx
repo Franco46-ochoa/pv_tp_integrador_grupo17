@@ -51,7 +51,6 @@ export default function ProductoForm({ edit: isEdit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validaciones
     if (formData.title.trim().length < 3) {
       toast.error('El título debe tener al menos 3 caracteres.');
       return;
@@ -85,104 +84,108 @@ export default function ProductoForm({ edit: isEdit }) {
 
     if (isEdit) {
       dispatch(edit({ ...formData, id: parseInt(id) }));
-      toast.success('Producto editado exitosamente');     
+      toast.success('Producto editado exitosamente');
     } else {
       const ultimoId = productos.length ? Math.max(...productos.map(p => p.id)) : 100;
       const nuevoId = ultimoId + 1;
       dispatch(add({ ...formData, id: nuevoId }));
       toast.success('Producto creado exitosamente');
     }
+
     setTimeout(() => {
       navigate("/Home");
     }, 1000);
-
-    
   };
 
   return (
-    <div className="container my-5 d-flex justify-content-center">
+    <>
       <ToastContainer />
-      <div className="card shadow p-4" style={{ maxWidth: '600px', width: '100%' }}>
-        <h3 className="text-center mb-4">
-          {isEdit ? 'Editar Producto' : 'Crear Producto'}
-        </h3>
+      <div
+        className="d-flex justify-content-center align-items-start"
+        style={{ paddingTop: '60px', paddingBottom: '60px', minHeight: '100vh' }}
+      >
+        <div className="card shadow p-4" style={{ maxWidth: '600px', width: '100%' }}>
+          <h3 className="text-center mb-4">
+            {isEdit ? 'Editar Producto' : 'Crear Producto'}
+          </h3>
 
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Título</label>
-            <input
-              type="text"
-              name="title"
-              className="form-control"
-              value={formData.title}
-              onChange={handleChange}
-              placeholder="Ej. Mouse gamer RGB"
-              required
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label className="form-label">Título</label>
+              <input
+                type="text"
+                name="title"
+                className="form-control"
+                value={formData.title}
+                onChange={handleChange}
+                placeholder="Ej. Mouse gamer RGB"
+                required
+              />
+            </div>
 
-          <div className="mb-3">
-            <label className="form-label">Precio</label>
-            <input
-              type="number"
-              name="price"
-              className="form-control"
-              value={formData.price}
-              onChange={handleChange}
-              placeholder="Ej. 4999.99"
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Precio</label>
+              <input
+                type="number"
+                name="price"
+                className="form-control"
+                value={formData.price}
+                onChange={handleChange}
+                placeholder="Ej. 4999.99"
+                required
+              />
+            </div>
 
-          <div className="mb-3">
-            <label className="form-label">Categoría</label>
-            <select
-              name="category"
-              className="form-select"
-              value={formData.category}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Seleccionar categoría</option>
-              {categorias.map(cat => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
-          </div>
-          
-          <div className="mb-3">
-            <label className="form-label">Imagen (URL)</label>
-            <input
-              type="text"
-              name="image"
-              className="form-control"
-              value={formData.image}
-              onChange={handleChange}
-              placeholder="https://ejemplo.com/imagen.jpg"
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Categoría</label>
+              <select
+                name="category"
+                className="form-select"
+                value={formData.category}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Seleccionar categoría</option>
+                {categorias.map(cat => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <div className="mb-4">
-            <label className="form-label">Descripción</label>
-            <textarea
-              name="description"
-              className="form-control"
-              rows="3"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Describe tu producto..."
-              required
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Imagen (URL)</label>
+              <input
+                type="text"
+                name="image"
+                className="form-control"
+                value={formData.image}
+                onChange={handleChange}
+                placeholder="https://ejemplo.com/imagen.jpg"
+                required
+              />
+            </div>
 
-          <button type="submit" className="btn btn-success w-100">
-            {isEdit ? 'Guardar Cambios' : 'Crear Producto'}
-          </button>
-        </form>
+            <div className="mb-4">
+              <label className="form-label">Descripción</label>
+              <textarea
+                name="description"
+                className="form-control"
+                rows="3"
+                value={formData.description}
+                onChange={handleChange}
+                placeholder="Describe tu producto..."
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-success w-100">
+              {isEdit ? 'Guardar Cambios' : 'Crear Producto'}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

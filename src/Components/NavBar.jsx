@@ -20,7 +20,7 @@ const NavBar = ({ tema }) => {
   return (
     <nav className={`NavBar ${tema} px-4 py-2`}>
       <div className="d-flex justify-content-between w-100 align-items-center">
-        {isLogin() && <span className="text-white">Bienvenido, {user()}</span>}
+        {isLogin() && <span >Bienvenido, {user()}</span>}
         <button className="Hamburguesa" onClick={toggleMenu}>
           &#9776; {/* Este es el ícono ☰ */}
         </button>
@@ -33,7 +33,6 @@ const NavBar = ({ tema }) => {
             <Link to="/Favoritos" onClick={() => setMenuAbierto(false)}>Favoritos</Link>
             <Link to="/Productos" onClick={() => setMenuAbierto(false)}>Gestion</Link>
             <Link to="/Login" onClick={() => { handleLogout(); setMenuAbierto(false); }}>Cerrar sesión</Link>
-            <Link to="/FormLogin" onClick={() => setMenuAbierto(false)}>Registro</Link>
           </>
         ) : (
           <>
