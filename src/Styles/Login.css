@@ -1,0 +1,13 @@
+.container {
+    max-width: 400px; /* Limita el ancho del formulario */
+}
+
+
+
+.text-center a {
+    color: #007bff; /* Color del enlace de registro */
+}
+
+.text-center a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
