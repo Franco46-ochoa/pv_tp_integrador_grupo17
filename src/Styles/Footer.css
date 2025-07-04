@@ -1,7 +1,7 @@
 /* Estilos generales del footer */
 /* Estilos para el tema claro */
 .footer.claro {
-    background-color: salmon; /* Color claro */
+    background-color:salmon; /* Color claro */
     color: black; /* Texto oscuro */
     max-width: 100%;
 }
